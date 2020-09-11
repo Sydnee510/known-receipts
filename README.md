@@ -4,9 +4,11 @@ To clone this repo:
 
 https://github.com/Sydnee510/known-receipts
 
+
 cd into 
 
 receipts-backend
+
 
 run 
 
@@ -16,15 +18,18 @@ rails db:migrate (migrate database)
 
 rails s (start backend server)
 
+
 open a new terminal
 
 cd into 
 
 receipts-frontend
 
+
 run 
 
 npm yarn start (start frontend server)
+
 
 Ruby On Rails Backend
 
