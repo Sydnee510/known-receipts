@@ -1,4 +1,4 @@
 class Fact < ApplicationRecord
-    has_many :myths
+    belongs_to :myth
     validates :true_content, :receipt_url, presence: true
 end

@@ -1,4 +1,4 @@
 class Myth < ApplicationRecord
-    belongs_to :fact
+    has_many :facts
     validates :false_content, presence: true
 end
