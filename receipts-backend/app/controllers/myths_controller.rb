@@ -1,0 +1,2 @@
+class MythsController < ApplicationController
+end
