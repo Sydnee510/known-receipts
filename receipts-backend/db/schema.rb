@@ -15,17 +15,17 @@ ActiveRecord::Schema.define(version: 2020_09_15_165615) do
   create_table "facts", force: :cascade do |t|
     t.text "true_content"
     t.text "receipt_url"
+    t.integer "myth_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["myth_id"], name: "index_facts_on_myth_id"
   end
 
   create_table "myths", force: :cascade do |t|
     t.text "false_content"
-    t.integer "fact_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["fact_id"], name: "index_myths_on_fact_id"
   end
 
-  add_foreign_key "myths", "facts"
+  add_foreign_key "facts", "myths"
 end
