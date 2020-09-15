@@ -143,3 +143,187 @@ puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
 puma (4.3.6) lib/puma/server.rb:472:in `process_client'
 puma (4.3.6) lib/puma/server.rb:328:in `block in run'
 puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/myths" for ::1 at 2020-09-15 11:11:59 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MythsController#index as HTML
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 1264)
+
+
+Started GET "/myths" for ::1 at 2020-09-15 11:12:02 -0700
+Processing by MythsController#index as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 44)
+
+
+Started GET "/" for ::1 at 2020-09-15 11:12:15 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/syd/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/syd/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.1ms | Allocations: 316)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 1594)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-09-15 11:12:15 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/myths" for ::1 at 2020-09-15 11:12:18 -0700
+Processing by MythsController#index as HTML
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 62)
+
+
+Started GET "/myths" for ::1 at 2020-09-15 11:12:23 -0700
+Processing by MythsController#index as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 44)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mMyth Load (0.4ms)[0m  [1m[34mSELECT "myths".* FROM "myths" ORDER BY "myths"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMyth Load (0.3ms)[0m  [1m[34mSELECT "myths".* FROM "myths" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" ORDER BY "facts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFact Load (0.4ms)[0m  [1m[34mSELECT "facts".* FROM "facts" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mMyth Load (0.4ms)[0m  [1m[34mSELECT "myths".* FROM "myths" ORDER BY "myths"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMyth Load (0.3ms)[0m  [1m[34mSELECT "myths".* FROM "myths" ORDER BY "myths"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMyth Load (0.2ms)[0m  [1m[34mSELECT "myths".* FROM "myths" ORDER BY "myths"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFact Load (0.3ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ? LIMIT ?[0m  [["myth_id", 1], ["LIMIT", 11]]
+  [1m[36mMyth Load (0.4ms)[0m  [1m[34mSELECT "myths".* FROM "myths" ORDER BY "myths"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mFact Load (0.3ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ? LIMIT ?[0m  [["myth_id", 2], ["LIMIT", 11]]
+  [1m[36mMyth Load (0.2ms)[0m  [1m[34mSELECT "myths".* FROM "myths" ORDER BY "myths"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ? LIMIT ?[0m  [["myth_id", 3], ["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-09-15 12:20:58 -0700
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/syd/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/syd/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.5ms | Allocations: 316)
+Completed 200 OK in 37ms (Views: 22.7ms | ActiveRecord: 0.0ms | Allocations: 1597)
+
+
+Started GET "/myths" for ::1 at 2020-09-15 12:21:02 -0700
+Processing by MythsController#index as HTML
+  [1m[36mMyth Load (0.5ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+Completed 200 OK in 24ms (Views: 10.9ms | ActiveRecord: 1.0ms | Allocations: 5463)
+
+
+Started GET "/myths/facts" for ::1 at 2020-09-15 12:21:24 -0700
+Processing by MythsController#show as HTML
+  Parameters: {"id"=>"facts"}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 31)
+
+
+Started GET "/facts" for ::1 at 2020-09-15 12:21:33 -0700
+Processing by FactsController#index as HTML
+Completed 204 No Content in 11ms (ActiveRecord: 0.0ms | Allocations: 822)
+
+
+Started GET "/myths" for ::1 at 2020-09-15 12:22:17 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MythsController#index as HTML
+  [1m[36mMyth Load (0.2ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 4.9ms | ActiveRecord: 0.7ms | Allocations: 4921)
+
+
+Started GET "/myths/facts" for ::1 at 2020-09-15 12:22:21 -0700
+Processing by MythsController#show as HTML
+  Parameters: {"id"=>"facts"}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 25)
+
+
+Started GET "/facts" for ::1 at 2020-09-15 12:22:25 -0700
+Processing by FactsController#index as HTML
+  [1m[36mFact Load (0.3ms)[0m  [1m[34mSELECT "facts".* FROM "facts"[0m
+  ↳ app/controllers/facts_controller.rb:4:in `index'
+Completed 200 OK in 19ms (Views: 11.4ms | ActiveRecord: 1.8ms | Allocations: 6185)
+
+
+Started GET "/facts" for ::1 at 2020-09-15 13:05:40 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/facts"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/myths" for ::1 at 2020-09-15 13:05:44 -0700
+Processing by MythsController#index as HTML
+  [1m[36mMyth Load (0.2ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 6.9ms | ActiveRecord: 0.2ms | Allocations: 4749)
+
+
+Started GET "/myths/facts" for ::1 at 2020-09-15 13:05:47 -0700
+Processing by MythsController#show as HTML
+  Parameters: {"id"=>"facts"}
+  [1m[36mMyth Load (0.4ms)[0m  [1m[34mSELECT "myths".* FROM "myths" WHERE "myths"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/myths_controller.rb:17:in `show'
+Completed 404 Not Found in 6ms (ActiveRecord: 0.4ms | Allocations: 1038)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Myth with 'id'=facts):
+  
+app/controllers/myths_controller.rb:17:in `show'
+Started GET "/myths/1" for ::1 at 2020-09-15 13:22:27 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MythsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMyth Load (0.2ms)[0m  [1m[34mSELECT "myths".* FROM "myths" WHERE "myths"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/myths_controller.rb:17:in `show'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 4253)
+
+
+Started GET "/myths/1/facts" for ::1 at 2020-09-15 13:22:37 -0700
+Processing by FactsController#index as HTML
+  Parameters: {"myth_id"=>"1"}
+  [1m[36mMyth Load (0.2ms)[0m  [1m[34mSELECT "myths".* FROM "myths" WHERE "myths"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/facts_controller.rb:32:in `set_myth'
+  [1m[36mFact Load (0.6ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+  ↳ app/controllers/facts_controller.rb:7:in `index'
+Completed 200 OK in 61ms (Views: 33.5ms | ActiveRecord: 0.8ms | Allocations: 7899)
+
+
