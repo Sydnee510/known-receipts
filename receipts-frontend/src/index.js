@@ -1,15 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import {createStore, applyMiddleware} from 'redux';
-// import thunk from 'redux-thunk'
-// import { Provider } from 'react-redux'
+import {createStore, applyMiddleware, compose} from 'redux'
+import thunk from 'redux-thunk'
+import { Provider } from 'react-redux'
+import mythReducer from './reducers/mythReducer'
 import App from './App';
 
+//set up store
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+let store = createStore(mythReducer, composeEnhancers(applyMiddleware(thunk)))
+
 ReactDOM.render(
-  // <React.StrictMode>
-    <App />
-  // </React.StrictMode>
-  ,
+  <Provider store={store}>
+     <App />
+  </Provider>,
   document.getElementById('root')
 );
 
