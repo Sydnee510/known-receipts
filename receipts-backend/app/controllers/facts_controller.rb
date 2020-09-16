@@ -3,7 +3,7 @@ class FactsController < ApplicationController
     before_action :set_myth
    
     def index
-        @facts = @myth.facts
+            @facts = Fact.all 
         render json: @facts
     end
 
