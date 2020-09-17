@@ -1,6 +1,11 @@
 export default function mythReducer(state = {myths: []}, action) {
-
-    return action.payload
+//debugger;
+    switch (action.type){
+        case 'FETCH_MYTHS':
+            return {myths: action.payload}
+        default:
+            return state
+    }
 
 
 }
