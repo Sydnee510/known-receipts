@@ -4,6 +4,7 @@ import {createStore, applyMiddleware, compose} from 'redux'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import mythReducer from './reducers/mythReducer'
+
 import App from './App';
 
 //set up store
