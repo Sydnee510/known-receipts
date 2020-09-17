@@ -1,15 +1,12 @@
 import React from 'react';
-
+import {connect} from 'react-redux'
+import {fetchMyths} from './actions/fetchMyths'
  class App extends React.Component {
+  
   componentDidMount() {
-    fetch('http://localhost:3000/myths', {
-      method: "GET"
-    })
-
-    .then(response => response.json())
-    .then(data => console.log(data))
-
+   this.props.fetchMyths({type: "FETCH_MYTHS", payload: {name: "Checking"}})
   }
+
   render() {
     return (
       <div className="App">
@@ -19,4 +16,4 @@ import React from 'react';
   }
 }
 
-export default App;
+export default connect(null, {fetchMyths})(App);
