@@ -12,7 +12,7 @@ class MythsContainer extends React.Component {
     render() {
         return (
             <div>
-                <MythInput/>
+                <MythInput/><br></br>
                 <Myths myths={this.props.myths}/>
             </div>
         )
