@@ -14,6 +14,15 @@ export default function mythReducer(state = {myths: []}, action) {
                 }
             })
             return {...state, myths: myths}
+        case 'DELETE_MYTH':
+            let mythsDelete = state.myths.map(myth => {
+                if (myth.id === action.payload.id) {
+                    return action.payload
+                } else {
+                    return myth
+                }
+            })
+            return {...state, myths: mythsDelete}
             default:
             return state
     }
