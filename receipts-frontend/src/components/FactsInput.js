@@ -18,7 +18,6 @@ class FactsInput extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault()
          this.props.addFact(this.state, this.props.myth.id)
-        alert("Fact Created!")
         this.setState({
             true_content: '',
             receipt_url: ''
