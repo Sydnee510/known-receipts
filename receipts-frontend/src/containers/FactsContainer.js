@@ -7,7 +7,7 @@ class FactsContainer extends React.Component {
     render() {
         return (
         <div>
-            <FactsInput/>
+            <FactsInput myth={this.props.myth}/>
             <Facts facts={this.props.myth && this.props.myth.facts}/>
         </div>)
     }
