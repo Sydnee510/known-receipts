@@ -1,6 +1,5 @@
 import React from 'react' 
-import {Route, Link} from 'react-router-dom'
-import Myth from './Myth'
+import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {deleteMyth} from '../actions/deleteMyth'
 

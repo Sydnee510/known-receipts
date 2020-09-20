@@ -1,7 +1,7 @@
 import React from 'react'
 import FactsInput from '../components/FactsInput'
 import Facts from '../components/Facts'
-import Myth from '../components/Myth'
+
 class FactsContainer extends React.Component {
 
     render() {
