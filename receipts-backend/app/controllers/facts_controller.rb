@@ -8,10 +8,9 @@ class FactsController < ApplicationController
     end
 
     def create 
-        @fact = @fact.myths.new(fact_params)
-        @fact = Fact.new(fact_params)
+        @fact = @myth.facts.new(fact_params)
         if @fact.save 
-            render json: @fact
+            render json: @myth
         else
             render json: {error: 'Error creating Fact'}
         end
