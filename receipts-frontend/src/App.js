@@ -1,7 +1,6 @@
 import React from 'react';
-//import {connect} from 'react-redux'
 import { Link } from 'react-router-dom'
-import MythsContainer from './containers/MythsContainer'
+import Program from './components/Program'
  
 class App extends React.Component {
   
@@ -13,7 +12,8 @@ class App extends React.Component {
       <Link to="/">Home Page</Link> <br></br>
       <Link to="/myths">Rumors</Link> <br></br>
       <Link to="/myths/new">+Rumor</Link> <br></br>
-      <MythsContainer/>
+      <Link to="/background">Kamala's Background</Link>
+      <Program/>
       </div>
     );
   }
