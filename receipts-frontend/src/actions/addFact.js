@@ -10,6 +10,15 @@ export const addFact = (fact, mythId) => {
             body: JSON.stringify(fact)
         })
         .then(response => response.json())
-        .then(myth => dispatch({type: 'ADD_FACT', payload: myth}))
+        .then(myth => {
+            if (myth.error) {
+                alert(myth.error)
+            }
+            else {
+            dispatch({type: 'ADD_FACT', payload: myth})
+            alert("Fact Created!")
+            }
+        }
+        )
     }
 }

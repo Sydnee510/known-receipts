@@ -12,7 +12,7 @@ class FactsController < ApplicationController
         if @fact.save 
             render json: @myth
         else
-            render json: {error: 'Error creating Fact'}
+            render json: {error: 'Error: Need content and an url'}
         end
     end 
 
