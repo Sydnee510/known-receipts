@@ -1,5 +1,5 @@
 import React from 'react'
-import {Redirect} from 'react-router-dom'
+//import {Redirect} from 'react-router-dom'
 // import {connect} from 'react-redux'
 // import {deleteMyth} from '../actions/deleteMyth'
 import FactsContainer from '../containers/FactsContainer'
