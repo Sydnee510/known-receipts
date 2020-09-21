@@ -6,6 +6,7 @@ import {deleteMyth} from '../actions/deleteMyth'
 const Myths = (props) => {
     const handleDelete = (myth) => {
         props.deleteMyth(myth.id)
+        .then(window.location.reload(false))
     }
 console.log(props)
     return (
