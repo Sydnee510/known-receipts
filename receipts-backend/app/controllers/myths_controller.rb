@@ -19,7 +19,7 @@ class MythsController < ApplicationController
     end
 
     def destroy 
-        @myth = Myth.find(params["id"])
+        @myth = Myth.find(params[:id])
         if @myth.destroy
         render json: @myth.to_json
         else 
