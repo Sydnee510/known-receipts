@@ -9,7 +9,7 @@ class MythsController < ApplicationController
         if @myth.save 
             render json: @myth
         else
-            render json: {error: 'Error creating Myth'}
+            render json: {error: 'Error: missing content'}
         end
     end 
 

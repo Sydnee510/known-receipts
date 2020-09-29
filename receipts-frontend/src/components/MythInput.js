@@ -16,7 +16,6 @@ class MythInput extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.addMyth(this.state)
-        alert("Myth Created!")
         this.setState({
             false_content: ''
         })

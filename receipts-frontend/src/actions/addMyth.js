@@ -10,6 +10,15 @@ export const addMyth = (data) => {
             body: JSON.stringify(data)
         })
         .then(response => response.json())
-        .then(myth => dispatch({type: 'ADD_MYTH', payload: myth}))
+        .then(myth => {
+            if (myth.error) {
+                alert(myth.error)
+            }
+            else{
+            dispatch({type: 'ADD_MYTH', payload: myth})
+            alert("Myth Created! Check out Rumors tab to view")
+            }
+        
+        })
     }
 }

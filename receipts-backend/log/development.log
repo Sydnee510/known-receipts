@@ -10755,3 +10755,750 @@ Processing by MythsController#index as */*
 Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.7ms | Allocations: 6210)
 
 
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/myths" for ::1 at 2020-09-28 15:56:39 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (3.8ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (2.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.3ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (87.56ms)
+Completed 200 OK in 150ms (Views: 126.6ms | ActiveRecord: 8.9ms | Allocations: 20396)
+
+
+Started GET "/myths" for ::1 at 2020-09-28 15:57:41 -0700
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (0.2ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.98ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.6ms | Allocations: 6229)
+
+
+Started POST "/myths" for ::1 at 2020-09-28 15:58:01 -0700
+Processing by MythsController#create as JSON
+  Parameters: {"false_content"=>"new rumor", "myth"=>{"false_content"=>"new rumor"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/myths_controller.rb:9:in `create'
+  [1m[36mMyth Create (2.4ms)[0m  [1m[32mINSERT INTO "myths" ("false_content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["false_content", "new rumor"], ["created_at", "2020-09-28 22:58:01.376043"], ["updated_at", "2020-09-28 22:58:01.376043"]]
+  ↳ app/controllers/myths_controller.rb:9:in `create'
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/myths_controller.rb:9:in `create'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 14]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:10:in `create'
+[active_model_serializers] Rendered MythSerializer with ActiveModelSerializers::Adapter::Attributes (2.27ms)
+Completed 200 OK in 15ms (Views: 2.9ms | ActiveRecord: 5.3ms | Allocations: 4044)
+
+
+Started POST "/myths/14/facts" for ::1 at 2020-09-28 15:58:11 -0700
+Processing by FactsController#create as JSON
+  Parameters: {"true_content"=>"new fact", "receipt_url"=>"", "myth_id"=>"14", "fact"=>{"true_content"=>"new fact", "receipt_url"=>""}}
+  [1m[36mMyth Load (0.4ms)[0m  [1m[34mSELECT "myths".* FROM "myths" WHERE "myths"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/facts_controller.rb:27:in `set_myth'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 33ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 3101)
+
+
+Started POST "/myths" for ::1 at 2020-09-28 15:58:25 -0700
+Processing by MythsController#create as JSON
+  Parameters: {"false_content"=>"", "myth"=>{"false_content"=>""}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 777)
+
+
+Started POST "/myths" for ::1 at 2020-09-28 16:01:20 -0700
+Processing by MythsController#create as JSON
+  Parameters: {"false_content"=>"", "myth"=>{"false_content"=>""}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 726)
+
+
+Started GET "/myths" for ::1 at 2020-09-28 16:05:03 -0700
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (0.1ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 14]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (17.51ms)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.8ms | Allocations: 7639)
+
+
+Started GET "/myths" for ::1 at 2020-09-28 16:05:07 -0700
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (0.1ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 14]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (19.22ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.7ms | Allocations: 7637)
+
+
+Started POST "/myths" for ::1 at 2020-09-28 16:05:09 -0700
+Processing by MythsController#create as JSON
+  Parameters: {"false_content"=>"", "myth"=>{"false_content"=>""}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 715)
+
+
+Started DELETE "/myths/undefined" for ::1 at 2020-09-28 16:05:14 -0700
+Processing by MythsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mMyth Load (0.3ms)[0m  [1m[34mSELECT "myths".* FROM "myths" WHERE "myths"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/myths_controller.rb:22:in `destroy'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 620)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Myth with 'id'=undefined):
+  
+app/controllers/myths_controller.rb:22:in `destroy'
+Started GET "/myths" for ::1 at 2020-09-28 16:05:14 -0700
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (0.2ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 14]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (43.06ms)
+Completed 200 OK in 46ms (Views: 44.6ms | ActiveRecord: 0.9ms | Allocations: 7636)
+
+
+Started POST "/myths/14/facts" for ::1 at 2020-09-28 16:05:23 -0700
+Processing by FactsController#create as JSON
+  Parameters: {"true_content"=>"new", "receipt_url"=>"", "myth_id"=>"14", "fact"=>{"true_content"=>"new", "receipt_url"=>""}}
+  [1m[36mMyth Load (0.2ms)[0m  [1m[34mSELECT "myths".* FROM "myths" WHERE "myths"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/facts_controller.rb:27:in `set_myth'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1442)
+
+
+Started POST "/myths/14/facts" for ::1 at 2020-09-28 16:05:35 -0700
+Processing by FactsController#create as JSON
+  Parameters: {"true_content"=>"", "receipt_url"=>"", "myth_id"=>"14", "fact"=>{"true_content"=>"", "receipt_url"=>""}}
+  [1m[36mMyth Load (0.4ms)[0m  [1m[34mSELECT "myths".* FROM "myths" WHERE "myths"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/facts_controller.rb:27:in `set_myth'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 1795)
+
+
+Started POST "/myths" for ::1 at 2020-09-28 16:05:40 -0700
+Processing by MythsController#create as JSON
+  Parameters: {"false_content"=>"", "myth"=>{"false_content"=>""}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 714)
+
+
+Started DELETE "/myths/undefined" for ::1 at 2020-09-28 16:05:47 -0700
+Processing by MythsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mMyth Load (0.1ms)[0m  [1m[34mSELECT "myths".* FROM "myths" WHERE "myths"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/myths_controller.rb:22:in `destroy'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.1ms | Allocations: 609)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Myth with 'id'=undefined):
+  
+app/controllers/myths_controller.rb:22:in `destroy'
+Started GET "/myths" for ::1 at 2020-09-28 16:05:48 -0700
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (0.2ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 14]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (37.91ms)
+Completed 200 OK in 41ms (Views: 40.3ms | ActiveRecord: 0.7ms | Allocations: 7636)
+
+
+Started DELETE "/myths/14" for ::1 at 2020-09-28 16:05:49 -0700
+Processing by MythsController#destroy as */*
+  Parameters: {"id"=>"14"}
+  [1m[36mMyth Load (0.2ms)[0m  [1m[34mSELECT "myths".* FROM "myths" WHERE "myths"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/myths_controller.rb:22:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+  [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 14]]
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+  [1m[36mMyth Destroy (12.0ms)[0m  [1m[31mDELETE FROM "myths" WHERE "myths"."id" = ?[0m  [["id", 14]]
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+Completed 200 OK in 29ms (Views: 0.3ms | ActiveRecord: 15.2ms | Allocations: 3712)
+
+
+Started GET "/myths" for ::1 at 2020-09-28 16:05:49 -0700
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (0.2ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (30.3ms)
+Completed 200 OK in 50ms (Views: 49.5ms | ActiveRecord: 0.7ms | Allocations: 6213)
+
+
+Started POST "/myths" for ::1 at 2020-09-28 16:05:53 -0700
+Processing by MythsController#create as JSON
+  Parameters: {"false_content"=>"", "myth"=>{"false_content"=>""}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 714)
+
+
+Started GET "/myths" for ::1 at 2020-09-28 16:06:12 -0700
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (0.2ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.78ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.5ms | Allocations: 6214)
+
+
+Started GET "/myths" for ::1 at 2020-09-28 16:06:33 -0700
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (2.1ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.03ms)
+Completed 200 OK in 12ms (Views: 9.1ms | ActiveRecord: 2.4ms | Allocations: 6210)
+
+
+Started POST "/myths" for ::1 at 2020-09-28 16:06:44 -0700
+Processing by MythsController#create as JSON
+  Parameters: {"false_content"=>"", "myth"=>{"false_content"=>""}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 714)
+
+
+Started POST "/myths" for ::1 at 2020-09-28 16:07:18 -0700
+Processing by MythsController#create as JSON
+  Parameters: {"false_content"=>"new myth", "myth"=>{"false_content"=>"new myth"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/myths_controller.rb:9:in `create'
+  [1m[36mMyth Create (0.4ms)[0m  [1m[32mINSERT INTO "myths" ("false_content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["false_content", "new myth"], ["created_at", "2020-09-28 23:07:18.202351"], ["updated_at", "2020-09-28 23:07:18.202351"]]
+  ↳ app/controllers/myths_controller.rb:9:in `create'
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/myths_controller.rb:9:in `create'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 15]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:10:in `create'
+[active_model_serializers] Rendered MythSerializer with ActiveModelSerializers::Adapter::Attributes (1.79ms)
+Completed 200 OK in 11ms (Views: 2.2ms | ActiveRecord: 3.4ms | Allocations: 3752)
+
+
+Started GET "/myths" for ::1 at 2020-09-28 16:13:21 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (0.2ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.3ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.3ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 15]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (23.47ms)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 1.2ms | Allocations: 7670)
+
+
+Started GET "/myths" for ::1 at 2020-09-28 16:19:49 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (0.2ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (1.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 15]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (40.92ms)
+Completed 200 OK in 50ms (Views: 45.0ms | ActiveRecord: 1.9ms | Allocations: 16176)
+
+
+Started POST "/myths" for ::1 at 2020-09-28 16:20:03 -0700
+Processing by MythsController#create as JSON
+  Parameters: {"false_content"=>"new thing", "myth"=>{"false_content"=>"new thing"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/myths_controller.rb:9:in `create'
+  [1m[36mMyth Create (0.6ms)[0m  [1m[32mINSERT INTO "myths" ("false_content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["false_content", "new thing"], ["created_at", "2020-09-28 23:20:03.794245"], ["updated_at", "2020-09-28 23:20:03.794245"]]
+  ↳ app/controllers/myths_controller.rb:9:in `create'
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/myths_controller.rb:9:in `create'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 16]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:10:in `create'
+[active_model_serializers] Rendered MythSerializer with ActiveModelSerializers::Adapter::Attributes (3.65ms)
+Completed 200 OK in 16ms (Views: 3.9ms | ActiveRecord: 6.2ms | Allocations: 3849)
+
+
+Started GET "/myths" for ::1 at 2020-09-28 16:21:11 -0700
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (0.1ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 15]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 16]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (33.43ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 1.1ms | Allocations: 9063)
+
+
+Started GET "/myths" for ::1 at 2020-09-28 16:21:21 -0700
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (0.3ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 15]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 16]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (31.87ms)
+Completed 200 OK in 36ms (Views: 34.5ms | ActiveRecord: 1.1ms | Allocations: 9063)
+
+
+Started POST "/myths" for ::1 at 2020-09-28 16:21:30 -0700
+Processing by MythsController#create as JSON
+  Parameters: {"false_content"=>"new", "myth"=>{"false_content"=>"new"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/myths_controller.rb:9:in `create'
+  [1m[36mMyth Create (0.7ms)[0m  [1m[32mINSERT INTO "myths" ("false_content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["false_content", "new"], ["created_at", "2020-09-28 23:21:30.546741"], ["updated_at", "2020-09-28 23:21:30.546741"]]
+  ↳ app/controllers/myths_controller.rb:9:in `create'
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/myths_controller.rb:9:in `create'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 17]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:10:in `create'
+[active_model_serializers] Rendered MythSerializer with ActiveModelSerializers::Adapter::Attributes (1.56ms)
+Completed 200 OK in 9ms (Views: 1.9ms | ActiveRecord: 3.6ms | Allocations: 3754)
+
+
+Started POST "/myths" for ::1 at 2020-09-28 16:21:41 -0700
+Processing by MythsController#create as JSON
+  Parameters: {"false_content"=>"", "myth"=>{"false_content"=>""}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 853)
+
+
+Started DELETE "/myths/17" for ::1 at 2020-09-28 16:22:40 -0700
+Processing by MythsController#destroy as */*
+  Parameters: {"id"=>"17"}
+  [1m[36mMyth Load (0.3ms)[0m  [1m[34mSELECT "myths".* FROM "myths" WHERE "myths"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/myths_controller.rb:22:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+  [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 17]]
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+  [1m[36mMyth Destroy (0.6ms)[0m  [1m[31mDELETE FROM "myths" WHERE "myths"."id" = ?[0m  [["id", 17]]
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 13.2ms | Allocations: 3795)
+
+
+Started GET "/myths" for ::1 at 2020-09-28 16:22:41 -0700
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (0.3ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 15]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 16]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13.59ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.9ms | Allocations: 9233)
+
+
+Started DELETE "/myths/16" for ::1 at 2020-09-28 16:22:41 -0700
+Processing by MythsController#destroy as */*
+  Parameters: {"id"=>"16"}
+  [1m[36mMyth Load (0.1ms)[0m  [1m[34mSELECT "myths".* FROM "myths" WHERE "myths"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/myths_controller.rb:22:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+  [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 16]]
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+  [1m[36mMyth Destroy (0.5ms)[0m  [1m[31mDELETE FROM "myths" WHERE "myths"."id" = ?[0m  [["id", 16]]
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 3.7ms | Allocations: 3611)
+
+
+Started GET "/myths" for ::1 at 2020-09-28 16:22:41 -0700
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (0.2ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 15]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.91ms)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.8ms | Allocations: 7637)
+
+
+Started GET "/myths" for ::1 at 2020-09-28 16:23:11 -0700
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (0.2ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 15]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (22.65ms)
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.9ms | Allocations: 7640)
+
+
+Started POST "/myths/15/facts" for ::1 at 2020-09-28 16:23:17 -0700
+Processing by FactsController#create as JSON
+  Parameters: {"true_content"=>"new", "receipt_url"=>"", "myth_id"=>"15", "fact"=>{"true_content"=>"new", "receipt_url"=>""}}
+  [1m[36mMyth Load (0.1ms)[0m  [1m[34mSELECT "myths".* FROM "myths" WHERE "myths"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/facts_controller.rb:27:in `set_myth'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 1508)
+
+
+Started POST "/myths/15/facts" for ::1 at 2020-09-28 16:23:29 -0700
+Processing by FactsController#create as JSON
+  Parameters: {"true_content"=>"new ", "receipt_url"=>"fact.com", "myth_id"=>"15", "fact"=>{"true_content"=>"new ", "receipt_url"=>"fact.com"}}
+  [1m[36mMyth Load (0.4ms)[0m  [1m[34mSELECT "myths".* FROM "myths" WHERE "myths"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/facts_controller.rb:27:in `set_myth'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/facts_controller.rb:12:in `create'
+  [1m[36mFact Create (0.9ms)[0m  [1m[32mINSERT INTO "facts" ("true_content", "receipt_url", "myth_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["true_content", "new "], ["receipt_url", "fact.com"], ["myth_id", 15], ["created_at", "2020-09-28 23:23:29.370925"], ["updated_at", "2020-09-28 23:23:29.370925"]]
+  ↳ app/controllers/facts_controller.rb:12:in `create'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/facts_controller.rb:12:in `create'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 15]]
+[active_model_serializers]   ↳ app/controllers/facts_controller.rb:13:in `create'
+[active_model_serializers] Rendered MythSerializer with ActiveModelSerializers::Adapter::Attributes (2.12ms)
+Completed 200 OK in 16ms (Views: 2.4ms | ActiveRecord: 3.6ms | Allocations: 4624)
+
+
+Started POST "/myths/15/facts" for ::1 at 2020-09-28 16:23:34 -0700
+Processing by FactsController#create as JSON
+  Parameters: {"true_content"=>"new", "receipt_url"=>"", "myth_id"=>"15", "fact"=>{"true_content"=>"new", "receipt_url"=>""}}
+  [1m[36mMyth Load (0.4ms)[0m  [1m[34mSELECT "myths".* FROM "myths" WHERE "myths"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/facts_controller.rb:27:in `set_myth'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 1441)
+
+
+Started POST "/myths/15/facts" for ::1 at 2020-09-28 16:23:38 -0700
+Processing by FactsController#create as JSON
+  Parameters: {"true_content"=>"", "receipt_url"=>"new", "myth_id"=>"15", "fact"=>{"true_content"=>"", "receipt_url"=>"new"}}
+  [1m[36mMyth Load (0.2ms)[0m  [1m[34mSELECT "myths".* FROM "myths" WHERE "myths"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/facts_controller.rb:27:in `set_myth'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 1443)
+
+
+Started GET "/myths" for ::1 at 2020-09-28 16:23:44 -0700
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (0.2ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.3ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 15]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.01ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.9ms | Allocations: 7798)
+
+
+Started DELETE "/myths/15" for ::1 at 2020-09-28 16:23:58 -0700
+Processing by MythsController#destroy as */*
+  Parameters: {"id"=>"15"}
+  [1m[36mMyth Load (0.1ms)[0m  [1m[34mSELECT "myths".* FROM "myths" WHERE "myths"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/myths_controller.rb:22:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+  [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 15]]
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+  [1m[36mFact Destroy (0.5ms)[0m  [1m[31mDELETE FROM "facts" WHERE "facts"."id" = ?[0m  [["id", 11]]
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+  [1m[36mMyth Destroy (0.2ms)[0m  [1m[31mDELETE FROM "myths" WHERE "myths"."id" = ?[0m  [["id", 15]]
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+Completed 200 OK in 19ms (Views: 0.4ms | ActiveRecord: 4.0ms | Allocations: 4575)
+
+
+Started GET "/myths" for ::1 at 2020-09-28 16:23:58 -0700
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (0.2ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.96ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.8ms | Allocations: 6383)
+
+
+Started POST "/myths" for ::1 at 2020-09-28 16:24:04 -0700
+Processing by MythsController#create as JSON
+  Parameters: {"false_content"=>"", "myth"=>{"false_content"=>""}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 714)
+
+
+Started POST "/myths" for ::1 at 2020-09-28 16:25:03 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MythsController#create as JSON
+  Parameters: {"false_content"=>"", "myth"=>{"false_content"=>""}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 3372)
+
+
+Started GET "/myths" for ::1 at 2020-09-28 16:27:02 -0700
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (0.3ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (32.64ms)
+Completed 200 OK in 49ms (Views: 46.9ms | ActiveRecord: 1.4ms | Allocations: 13008)
+
+
+Started POST "/myths" for ::1 at 2020-09-28 16:27:04 -0700
+Processing by MythsController#create as JSON
+  Parameters: {"false_content"=>"", "myth"=>{"false_content"=>""}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 714)
+
+
+Started POST "/myths" for ::1 at 2020-09-28 16:27:09 -0700
+Processing by MythsController#create as JSON
+  Parameters: {"false_content"=>"new myth", "myth"=>{"false_content"=>"new myth"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/myths_controller.rb:9:in `create'
+  [1m[36mMyth Create (1.1ms)[0m  [1m[32mINSERT INTO "myths" ("false_content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["false_content", "new myth"], ["created_at", "2020-09-28 23:27:09.538567"], ["updated_at", "2020-09-28 23:27:09.538567"]]
+  ↳ app/controllers/myths_controller.rb:9:in `create'
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/myths_controller.rb:9:in `create'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 18]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:10:in `create'
+[active_model_serializers] Rendered MythSerializer with ActiveModelSerializers::Adapter::Attributes (2.14ms)
+Completed 200 OK in 12ms (Views: 2.7ms | ActiveRecord: 4.2ms | Allocations: 3804)
+
+
+Started GET "/myths" for ::1 at 2020-09-28 16:28:15 -0700
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (0.2ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.3ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.3ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 18]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.5ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 1.1ms | Allocations: 7637)
+
+
+Started POST "/myths" for ::1 at 2020-09-28 16:28:28 -0700
+Processing by MythsController#create as JSON
+  Parameters: {"false_content"=>"new one", "myth"=>{"false_content"=>"new one"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/myths_controller.rb:9:in `create'
+  [1m[36mMyth Create (3.0ms)[0m  [1m[32mINSERT INTO "myths" ("false_content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["false_content", "new one"], ["created_at", "2020-09-28 23:28:28.346120"], ["updated_at", "2020-09-28 23:28:28.346120"]]
+  ↳ app/controllers/myths_controller.rb:9:in `create'
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/myths_controller.rb:9:in `create'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 19]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:10:in `create'
+[active_model_serializers] Rendered MythSerializer with ActiveModelSerializers::Adapter::Attributes (1.73ms)
+Completed 200 OK in 17ms (Views: 2.0ms | ActiveRecord: 9.3ms | Allocations: 3752)
+
+
+Started POST "/myths/19/facts" for ::1 at 2020-09-28 16:28:42 -0700
+Processing by FactsController#create as JSON
+  Parameters: {"true_content"=>"new fact", "receipt_url"=>"", "myth_id"=>"19", "fact"=>{"true_content"=>"new fact", "receipt_url"=>""}}
+  [1m[36mMyth Load (0.1ms)[0m  [1m[34mSELECT "myths".* FROM "myths" WHERE "myths"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/facts_controller.rb:27:in `set_myth'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 1624)
+
+
+Started POST "/myths/19/facts" for ::1 at 2020-09-28 16:28:52 -0700
+Processing by FactsController#create as JSON
+  Parameters: {"true_content"=>"new one", "receipt_url"=>"fact.com", "myth_id"=>"19", "fact"=>{"true_content"=>"new one", "receipt_url"=>"fact.com"}}
+  [1m[36mMyth Load (0.3ms)[0m  [1m[34mSELECT "myths".* FROM "myths" WHERE "myths"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/facts_controller.rb:27:in `set_myth'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/facts_controller.rb:12:in `create'
+  [1m[36mFact Create (0.6ms)[0m  [1m[32mINSERT INTO "facts" ("true_content", "receipt_url", "myth_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["true_content", "new one"], ["receipt_url", "fact.com"], ["myth_id", 19], ["created_at", "2020-09-28 23:28:52.568405"], ["updated_at", "2020-09-28 23:28:52.568405"]]
+  ↳ app/controllers/facts_controller.rb:12:in `create'
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/facts_controller.rb:12:in `create'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 19]]
+[active_model_serializers]   ↳ app/controllers/facts_controller.rb:13:in `create'
+[active_model_serializers] Rendered MythSerializer with ActiveModelSerializers::Adapter::Attributes (2.83ms)
+Completed 200 OK in 15ms (Views: 3.2ms | ActiveRecord: 4.2ms | Allocations: 4614)
+
+
+Started DELETE "/myths/19" for ::1 at 2020-09-28 16:28:58 -0700
+Processing by MythsController#destroy as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mMyth Load (0.4ms)[0m  [1m[34mSELECT "myths".* FROM "myths" WHERE "myths"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/myths_controller.rb:22:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+  [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 19]]
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+  [1m[36mFact Destroy (0.5ms)[0m  [1m[31mDELETE FROM "facts" WHERE "facts"."id" = ?[0m  [["id", 12]]
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+  [1m[36mMyth Destroy (0.3ms)[0m  [1m[31mDELETE FROM "myths" WHERE "myths"."id" = ?[0m  [["id", 19]]
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 8.3ms | Allocations: 4637)
+
+
+Started GET "/myths" for ::1 at 2020-09-28 16:28:59 -0700
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (0.3ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 18]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.29ms)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.9ms | Allocations: 7637)
+
+
+Started DELETE "/myths/18" for ::1 at 2020-09-28 16:29:00 -0700
+Processing by MythsController#destroy as */*
+  Parameters: {"id"=>"18"}
+  [1m[36mMyth Load (0.1ms)[0m  [1m[34mSELECT "myths".* FROM "myths" WHERE "myths"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/myths_controller.rb:22:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+  [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 18]]
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+  [1m[36mMyth Destroy (0.3ms)[0m  [1m[31mDELETE FROM "myths" WHERE "myths"."id" = ?[0m  [["id", 18]]
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/myths_controller.rb:23:in `destroy'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 5.2ms | Allocations: 3611)
+
+
+Started GET "/myths" for ::1 at 2020-09-28 16:29:00 -0700
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (0.4ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.2ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (28.22ms)
+Completed 200 OK in 31ms (Views: 30.2ms | ActiveRecord: 0.9ms | Allocations: 6213)
+
+
+Started GET "/myths" for ::1 at 2020-09-28 16:29:02 -0700
+Processing by MythsController#index as */*
+  [1m[36mMyth Load (0.9ms)[0m  [1m[34mSELECT "myths".* FROM "myths"[0m
+  ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.5ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 1]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 2]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mFact Load (0.1ms)[0m  [1m[34mSELECT "facts".* FROM "facts" WHERE "facts"."myth_id" = ?[0m  [["myth_id", 3]]
+[active_model_serializers]   ↳ app/controllers/myths_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.54ms)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 1.6ms | Allocations: 6210)
+
+
