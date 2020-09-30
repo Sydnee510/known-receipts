@@ -1,10 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
-import MythsContainer from '../containers/MythsContainer'
-import HomePage from './Homepage'
-import BackGround from './Background'
-import MythInput from './MythInput'
-
+import { Link } from 'react-router-dom'
 import {connect} from 'react-redux'
 
 class NavBar extends React.PureComponent {
@@ -13,13 +8,13 @@ class NavBar extends React.PureComponent {
     
     render(){
         return (    
-        <div>   
-        <Switch>
-            <Route  exact path="/" component={HomePage} />
-            <Route  path="/myths" component={MythsContainer} />
-            <Route  path='/myths/new' component={MythInput} />
-            <Route  path="/background" component={BackGround} />
-        </Switch>
+        <div>
+            <ul>
+                <li><Link to="/">Home Page </Link></li>
+                <li><Link to="/background">Kamala's Background</Link></li>  
+                <li><Link to="/myths">Rumors </Link></li> 
+                <li><Link to="/myths/new">+Rumor </Link></li> 
+            </ul>   
         </div>
         )
     }
