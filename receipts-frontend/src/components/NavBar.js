@@ -1,11 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {connect} from 'react-redux'
 
 class NavBar extends React.Component {
-    componentDidMount(){
-    }
-    
+   
     render(){
         return (    
         <div>
@@ -20,10 +17,4 @@ class NavBar extends React.Component {
     }
 }
 
-const mapStateToProps = state => {      
-    return {
-        myths: state.myths
-    }
-}
-
-export default connect(mapStateToProps)(NavBar)
+export default NavBar
