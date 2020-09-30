@@ -7,5 +7,4 @@ export const deleteMyth = (mythId) => {
         .then(response => response.json())
         .then(myth => dispatch({type: 'DELETE_MYTH', payload: myth}))
     }
-
 }

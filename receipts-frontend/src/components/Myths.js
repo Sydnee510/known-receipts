@@ -7,6 +7,7 @@ const Myths = (props) => {
     const handleDelete = (myth) => {
         props.deleteMyth(myth.id)
         .then(window.location.reload(false))
+        alert("Are you sure you want to delete this myth?")
     }
 console.log(props)
     return (
