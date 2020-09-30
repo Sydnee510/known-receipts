@@ -7,9 +7,8 @@ import MythInput from './MythInput'
 
 import {connect} from 'react-redux'
 
-class Program extends React.PureComponent {
+class NavBar extends React.PureComponent {
     componentDidMount(){
-        // console.log(this.props)
     }
     
     render(){
@@ -33,4 +32,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(Program)
+export default connect(mapStateToProps)(NavBar)

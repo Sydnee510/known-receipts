@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/index.css'
 import { Link } from 'react-router-dom'
-import Program from './components/Program'
+import NavBar from './components/NavBar'
  
 class App extends React.Component {
   
@@ -16,7 +16,7 @@ class App extends React.Component {
       <li><Link to="/myths">Rumors </Link></li> 
       <li><Link to="/myths/new">+Rumor </Link></li> 
       </ul>
-      <Program/>
+      <NavBar/>
       </div>
     );
   }
