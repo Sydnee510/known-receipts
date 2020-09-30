@@ -16,7 +16,6 @@ const Background = () => {
     </div>
 
     )
-
 }
 
 export default Background

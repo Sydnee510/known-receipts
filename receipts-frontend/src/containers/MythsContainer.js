@@ -35,4 +35,5 @@ const mapStateToProps = state => {
          myths: state.myths
     }
 }
+
 export default connect(mapStateToProps, {fetchMyths})(MythsContainer)

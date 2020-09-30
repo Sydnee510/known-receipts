@@ -11,8 +11,5 @@ class FactsContainer extends React.Component {
             <Facts facts={this.props.myth && this.props.myth.facts}/>
         </div>)
     }
-
-
-
 }
 export default FactsContainer

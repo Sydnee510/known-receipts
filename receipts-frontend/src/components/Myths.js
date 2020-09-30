@@ -14,12 +14,10 @@ console.log(props)
             <h3>False Content:</h3>
             {props.myths.map(myth => 
                 <li key={myth.id}>
-                    <Link to={`/myths/${myth.id}`}>{myth.false_content}</Link> <button onClick={()=> handleDelete(myth)}>delete
-        </button>
+                    <Link to={`/myths/${myth.id}`}>{myth.false_content}</Link> <button onClick={()=> handleDelete(myth)}>delete</button>
                 </li>)}
         </div>
     )
-
 }
 
 export default connect(null, {deleteMyth})(Myths)

@@ -18,7 +18,6 @@ class NavBar extends React.PureComponent {
         </div>
         )
     }
-
 }
 
 const mapStateToProps = state => {      
