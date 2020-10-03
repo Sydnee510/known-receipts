@@ -27,7 +27,7 @@ class FactsInput extends React.Component {
     
     render(){
         return(
-            <div>
+            <div className="fact-form">
                 <form onSubmit={this.handleSubmit}>
                     <label>Fact Content:</label>
                     <input type="text" placeholder="Add a new fact" value={this.state.true_content} name="true_content" onChange={this.handleChange}/>

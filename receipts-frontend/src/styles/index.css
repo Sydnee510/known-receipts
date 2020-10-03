@@ -1,18 +1,69 @@
+html {
+  text-align: center;
+  position: relative;
+ }
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
+  
 }
 ul li {
     display: inline;
   }
-  ul li {
-    float: left;
+ul li {
+    /* float: left; */
+    width: 100%
   }
   
   ul li a {
     display: block;
-    padding: 8px;
-    background-color: tan;
+    float: center;
+    text-align: center;
+    text-decoration: none;
+    background-color: tan; 
+    font-size: 17px;
   }
+
+  ul li a:hover {
+    color: gray;
+    background-color: brown;
+  }
+
+  ul li a:active {
+    color: green;
+    background-color: honeydew;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  
+  .form-group {
+    padding: 20px;
+  }
+
+  .myth-form {
+    padding: 20px;
+  }
+
+  .myths {
+    margin: 0 auto;
+    border-radius: 40px;
+    background: lightgray;
+    padding: 20px; 
+    width: 50%;
+    /* width: 100px; */
+    min-height: 40px; 
+    list-style-type:none;
+  }
+
+  .fact-form {
+    padding: 20px;
+  }
+
+ 

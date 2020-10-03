@@ -23,10 +23,12 @@ class MythInput extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="myth-form">
              <form onSubmit={this.handleSubmit}>
                  <label>Myth Content:</label>
-                 <input type="text" placeholder="Add a new myth" value={this.state.false_content} name="false_content" onChange={this.handleChange}/>
+                 <br></br>
+                 <textarea type="text" rows="4" cols="50" placeholder="Add a new myth" value={this.state.false_content} name="false_content" onChange={this.handleChange}/>
+                <br></br>
                 <input type="submit"/>
             </form>   
             </div>
