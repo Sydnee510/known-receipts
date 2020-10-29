@@ -1,4 +1,4 @@
-export default function mythReducer(state = {myths: [], searchResults: []}, action) {
+export default function mythReducer(state = {myths: []}, action) {
 //debugger;
     switch (action.type){
         case 'FETCH_MYTHS':
@@ -23,25 +23,9 @@ export default function mythReducer(state = {myths: [], searchResults: []}, acti
                 }
             })
             return {...state, myths: mythsDelete}
-        case 'SEARCH_MYTHS':
-            return {...state, searchResults: action.searchResults}
 
             default:
             return state
     }
 }
 
-export const searchMyths = (query, myths) => {
-    return {
-        type: "SEARCH_MYTHS",
-        searchResults: myths.filter(myth => {
-            return (
-                myth.false_content.toLowerCase() === query.toLowerCase() ||
-                myth.false_content.toLowerCase().startsWith(query) ||
-                myth.false_content.toLowerCase().includes(query)
-            )
-        })  
-    }
-
-
-}
