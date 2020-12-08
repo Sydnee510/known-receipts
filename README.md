@@ -1,32 +1,45 @@
-<h1>Receipts Of Kamala Harris</h1>
+# Receipts Of Kamala Harris
+
 This app is an information portal about Kamala Harris. I will be using this app to take notes of the facts and rumors that have occured in her time during politics. 
-<br><br><br>
-To clone this repo:
 
+## Installation
+
+Clone this repo:
 https://github.com/Sydnee510/known-receipts
-<br><br><br>
-cd into 
 
-receipts-backend
+Naviagte:
 
-run 
+    $ cd receipts-backend
 
-bundle (install dependicies)
+Install Dependicies:
 
-rails db:migrate (migrate database)
+    $ bundle install
 
-rails s (start backend server)
-<br><br><br>
-open a new terminal
+Migrate Database:
 
-cd into 
+    $ rails db:migrate 
 
-receipts-frontend
+Start backend-rails server:
 
-run 
+    $ rails s 
 
-npm yarn start (start frontend server)
-<br><br><br>
+Naviagte:
+
+    $ cd receipts-frontend
+
+Install node packages:
+
+    $  npm install 
+    or
+    $ yarn install
+
+Start frontend-react server:
+
+    $ npm start 
+    or 
+    $ yarn start
+
+## Frameworks
+
 Ruby On Rails Backend
-
 React-Redux Frontend 
