@@ -2,7 +2,7 @@
 
 This app is an information portal about Kamala Harris. I will be using this app to take notes of the facts and rumors that have occured in her time during politics. 
 
-## Installation
+## Installation  
 
 Clone this repo:
 https://github.com/Sydnee510/known-receipts
