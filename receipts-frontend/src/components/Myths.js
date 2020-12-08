@@ -18,7 +18,8 @@ const Myths = (props) => {
             {props.myths.map(myth => 
             
                 <li className="myths" key={myth.id}>
-                    <Link to={`/myths/${myth.id}`}>{myth.false_content}</Link> <button onClick={()=> handleDelete(myth)}>delete</button>
+                    <Link to={`/myths/${myth.id}`}>{myth.false_content}</Link><br></br>
+                     <button onClick={()=> handleDelete(myth)}>delete</button>
                 </li>)}
                 
         </div>

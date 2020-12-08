@@ -7,8 +7,7 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import mythReducer from './reducers/mythReducer'
 
 import App from './App';
-//program starts here
-//set up store
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 let store = createStore(mythReducer, composeEnhancers(applyMiddleware(thunk)))

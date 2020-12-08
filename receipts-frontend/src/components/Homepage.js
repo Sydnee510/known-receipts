@@ -6,7 +6,7 @@ const Homepage = () => {
         <h1>
             KAMALA HARRIS
         </h1>
-        <img src={Logo} alt="kamala" className="center"></img>
+        <img src={Logo} alt="kamala" className="image"></img>
        
     </div>
     )
